@@ -30,8 +30,17 @@ textToPrint = ""
 iText = 0
 isValid = True
 
+loopsQueue = []
+skip = False
+
 while iText < len(text) :
     c = text[iText]
+
+    if(skip):
+          if c == ']' :
+                skip = False
+          continue
+
 
     match c:
         case '+':
@@ -66,10 +75,17 @@ while iText < len(text) :
                         break
                     print("Please enter a single character to continue\n")
 
-        #case '[':
-                
-        #case ']':
-
+        case '[':
+                if(cells[i] > 0):
+                    if(iText not in loopsQueue):
+                        loopsQueue.append(iText)
+                else: 
+                      skip = True
+        case ']':
+                if(cells[i] > 0):
+                      iText = loopsQueue[-1]
+                else :
+                      loopsQueue.pop()
         case _:
                 textToPrint = f"String not valid, found this char({c})"
                 isValid = False
