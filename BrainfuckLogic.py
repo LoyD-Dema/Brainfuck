@@ -14,14 +14,14 @@ i = 0
 text = input("""Welcome to Brainfuck
 
 Rules:
-+ [Increment] Add 1 to the current cell. If the cell is at 255, it wraps back to 0.
-- [Decrement] Subtract 1 from the current cell. If the cell is at 0, it wraps to 255.
-> [Move Right] Move the pointer one cell to the right.
-< [Move Left] Move the pointer one cell to the left.
-. [Output] Print the current cell's value as an ASCII character.
-, [Input] Read one byte of input and store its value in the current cell.
-[ [Loop Start] If the current cell is 0, skip ahead to the instruction after the matching ]. Otherwise, continue into the loop.
-] [Loop End] If the current cell is not 0, jump back to the matching [. Otherwise, continue past the loop.
+    +  [Increment]   Add 1 to the current cell. If the cell is at 255, it wraps back to 0.
+    -  [Decrement]   Subtract 1 from the current cell. If the cell is at 0, it wraps to 255.
+    >  [Move Right]  Move the pointer one cell to the right.
+    <  [Move Left]   Move the pointer one cell to the left.
+    .  [Output]      Print the current cell's value as an ASCII character.
+    ,  [Input]       Read one byte of input and store its value in the current cell.
+    [  [Loop Start]  If the current cell is 0, skip ahead to the instruction after the matching ]. Otherwise, continue into the loop.
+    ]  [Loop End]    If the current cell is not 0, jump back to the matching [. Otherwise, continue past the loop.
 
 Write your text here:
 """) 
@@ -87,14 +87,14 @@ while iText < len(text) :
                 else :
                       loopsQueue.pop()
         case _:
-                textToPrint = f"String not valid, found this char({c})"
+                textToPrint = f"String not valid, found this char ({c})"
                 isValid = False
                 break        
     iText += 1
 
 
 if isValid :
-    print(f"Result:\n{textToPrint}")
+    print(f"\nResult:\n{textToPrint}\n")
 else :
-    print(textToPrint)
+    print(f"\n{textToPrint}\n")
     
