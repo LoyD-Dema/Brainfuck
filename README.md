@@ -1,6 +1,6 @@
 ## **Instructions**
 - Open the Brainfuck folder
-- Right click on an empty space and open the terminal. Be sure to be in this path: ...\Brainfuck
+- Right click on an empty space and open the terminal. Be sure to be in this path: ...\Brainfuck-master
 - Run this command ``py .\Brainfuck.py``
 
 ## **Examples** 
